@@ -30,25 +30,92 @@ a:active {
 button {
   	height: 50px;
   	width: 200px;
-  	cursor: pointer;
+  	cursor: pointer; /* Changes the cursor to a hand when on it */
   	font-weight: 600;
-  	font-size: 15px;
-	background-color: #000000;
-  	color: #fff;
-  	border: 2px solid #000000;
-  	border-radius: 10px;
-	box-shadow: 0px 5px
+  	font-size: 15px;	
+	background-color: #000000; 
+  	color: #fff; /* Text Colour */
+  	border: 2px solid #000000; /* The line around the button */
+  	border-radius: 10px; /* Gives it rounded corners */
+	
 }
 
 button:hover {
   	background-color: #ECBB35;
   	transition: background-color .15s, font-size .15s;
-	color: #000000;
+	color: #000000; /* Text Colour */
   	font-size: 18px;
+	box-shadow: 0px 5px
 }
 
 button:active {
   	background-color: #ECBB35;
-	color: #000000;
+	color: #000000; /* Text Colour */
   	font-size: 18px;
+	box-shadow: 0px 0px
+}
+
+/* Lists */
+li { display: inline; } /* display in a row not one under the other */
+
+
+/* Adds a > between list items */
+ li+li::before {
+  color: gray;
+  content: ">";
+}
+
+/* Fancy arrows in list for breadcrumbs */
+.breadcrumb {
+  text-align: left;
+}
+.breadcrumb li {
+  float: left;
+}
+
+.breadcrumb a {
+  color: #fff;
+  background: darkcyan;
+  text-decoration: none;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 15px;
+  padding: 0 5px;
+}
+
+.breadcrumb a {
+  display: inline;
+}
+.breadcrumb a::before,
+.breadcrumb a::after {
+  content: "";
+  position: absolute;
+  border-color: darkcyan;
+  border-style: solid;
+  border-width: 15px 5px;
+}
+
+.breadcrumb a::before {
+  left: -10px;
+  border-color: transparent;
+  border-left-color: transparent;
+}
+
+.breadcrumb a::after {
+  left: 100%;
+  border-color: transparent;
+  border-left-color: darkcyan;
+}
+
+.breadcrumb a:hover {
+  background-color: blue;
+}
+.breadcrumb a:hover::before {
+  border-color: blue;
+  border-left-color: transparent;
+}
+.breadcrumb a:hover::after {
+  border-left-color: blue;
 }
